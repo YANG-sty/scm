@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="scm-jar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Desktop/util/scm-jar" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$USER_HOME$/Desktop/util/scm-jar" recursive="false" />
+  </library>
+</component>

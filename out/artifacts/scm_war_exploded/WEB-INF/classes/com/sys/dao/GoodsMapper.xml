@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sys.dao.GoodsDao">
+  <resultMap id="GoodsResultMap" type="com.sys.entity.Goods">
+    <id column="goods_Id" jdbcType="VARCHAR" property="goodsId" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
+    <result column="goods_unit" jdbcType="VARCHAR" property="goodsUnit" />
+    <result column="goods_type" jdbcType="VARCHAR" property="goodsType" />
+    <result column="goods_color" jdbcType="VARCHAR" property="goodsColor" />
+    <result column="goods_store" jdbcType="INTEGER" property="goodsStore" />
+    <result column="goods_limit" jdbcType="INTEGER" property="goodsLimit" />
+    <result column="goods_commission" jdbcType="DECIMAL" property="goodsCommission" />
+    <result column="goods_producer" jdbcType="VARCHAR" property="goodsProducer" />
+    <result column="goods_remark" jdbcType="VARCHAR" property="goodsRemark" />
+    <result column="goods_sel_price" jdbcType="DECIMAL" property="goodsSelPrice" />
+    <result column="goods_buy_price" jdbcType="DECIMAL" property="goodsBuyPrice" />
+  </resultMap>
+
+  <!-- 增加供应商 -->
+  <insert id="insert" parameterType="com.sys.entity.Goods">
+    insert into goods (goods_Id, goods_name, goods_unit,
+                       goods_type, goods_color, goods_store,
+                       goods_limit, goods_commission, goods_producer,
+                       goods_remark, goods_sel_price, goods_buy_price)
+    values (#{goodsId},#{goodsName},#{goodsUnit},
+            #{goodsType},#{goodsColor},#{goodsStore},
+            #{goodsLimit},#{goodsCommission},#{goodsProducer},
+            #{goodsRemark},#{goodsSelPrice},#{goodsBuyPrice})
+  </insert>
+
+  <!-- 修改供应商信息 -->
+  <update id="update" parameterType="com.sys.entity.Goods">
+    update goods set
+                      goods_Id=#{goodsId},goods_name=#{goodsName},goods_unit=#{goodsUnit},
+                      goods_type=#{goodsType},goods_color=#{goodsColor},goods_store=#{goodsStore},
+                      goods_limit=#{goodsLimit},goods_commission=#{goodsCommission},goods_producer=#{goodsProducer},
+                      goods_remark=#{goodsRemark},goods_sel_price=#{goodsSelPrice},goods_buy_price=#{goodsBuyPrice}
+    where
+      goods_Id = #{goodsId}
+  </update>
+
+  <!-- 批量删除供货商信息 -->
+  <delete id="delete">
+    delete from goods where goods_Id in
+    <foreach collection="array" open="(" close=")" separator="," item="ids">
+      #{ids}
+    </foreach>
+  </delete>
+    <!-- 通过多条件分页查询，返回数据集 -->
+    <select id="selectPageListDyc" parameterType="com.sys.entity.Page" resultMap="GoodsResultMap">
+        select * from goods
+        <where>
+          <if test="paramEntity.goodsId!=null">and goods_id like #{paramEntity.goodsId}</if>
+          <if test="paramEntity.goodsName!=null">and goods_name like #{paramEntity.goodsName}</if>
+          <if test="paramEntity.goodsType!=null">and goods_type like #{paramEntity.goodsType}</if>
+        </where>
+        limit #{start},#{rows}
+    </select>
+
+  <!-- 通过多条件分页查询，返回总记录数 -->
+  <select id="selectPageCountDyc" parameterType="com.sys.entity.Page" resultType="Integer">
+    select count(1) from goods
+    <where>
+      <if test="paramEntity.goodsId!=null">and goods_id like #{paramEntity.goodsId}</if>
+      <if test="paramEntity.goodsName!=null">and goods_name like #{paramEntity.goodsName}</if>
+      <if test="paramEntity.goodsType!=null">and goods_type like #{paramEntity.goodsType}</if>
+    </where>
+  </select>
+</mapper>

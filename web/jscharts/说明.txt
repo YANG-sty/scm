@@ -1,0 +1,277 @@
+一。导入jscharts.js
+二。编写jscharts.jsp测试页面
+
+1.下载JScharts库
+从官网下载JScharts库，我们使用的是压缩包里面的jscharts.js文件。它大约150KB。
+
+2. 使用JScharts库
+在网页文件（如.html或.jsp）包含JScharts库。
+
+<script type="text/javascript" src="js/jscharts.js"></script>
+
+3. 定义容器
+要在网页文件上显示JScharts生成的图像，需要把此图像放入网页容器。此网页容器我们通常用<div>标签来定义，而且必须强制性地为此DIV元素指定唯一的ID值。比如：
+
+<div id="chartcontainer">这里将用来显示图形报表</div>
+
+注意：此DIV容器内的内容都会被JScharts图像所替代。
+
+4. 显示JScharts图像
+下面，我们需要写少量代码来显示一个线性图。首先要准备好图像所需的数据，我们可以用JavaScript数组来提供数据，数组中的每个元素都是由2个元素所组成
+<script type="text/javascript">
+		var myData = new Array([ "商品1", 20 ], [  "商品2", 10 ], [  "商品3", 30 ], [  "商品4", 10 ],
+				[  "商品5", 5 ]);
+		var myChart = new JSChart('chartcontainer', 'line');
+		myChart.setDataArray(myData);
+		myChart.draw();
+		</script>
+
+
+5.使用详细说明
+
+<body>
+	<div id="chartcontainer">这里将用来显示图形报表</div>
+	<script type="text/javascript">
+	//支持js二维数组、json格式、xml格式数据源
+		var myData = new Array([ "商品1", 20 ], [  "商品2", 10 ], [  "商品3", 30 ], [  "商品4", 10 ],
+				[  "商品5", 5 ]);
+				//第二个参数值有：line,bar,pie分别表示用线形图、柱状图、饼图来展示报表
+		var myChart = new JSChart('chartcontainer', 'line');
+		//数据源处理方式一：setDataArray(myData)使用js数组
+		//myChart.setDataArray(myData);
+		//数据源处理方式二：setDataJSON使用json格式数据
+		//myChart.setDataJSON("data.json");
+		//数据源处理方式三：setDataXML使用xml格式数据
+		myChart.setDataXML("data.xml");
+		
+		myChart.setTitle('测试报表');
+		
+		myChart.draw();
+		</script>
+		
+<!-- var myChart = new JSChart('chart_container', $("#type").val(),'');
+					
+setAxisColor(string hexcolor)设置轴线颜色，对饼图无效。参数为16进制颜色值。
+
+resize(integer x, integer y)重置图表大小，默认x/y为400px/300px，新值应是默认值的整数倍.
+
+setAxisNameColor(string hexcolor)设置轴线名的颜色，对饼图无效。
+
+setAxisNameFontSize(integer fontsize)设置轴线名字体大小，对饼图无效。默认是11。
+
+setAxisNameX(string axisname)设置x轴的名称，对饼图无效。
+
+setAxisNameY(string axisname)设置y轴的名称，对饼图无效。
+
+setAxisPaddingBottom(integer padding)设置x轴和容器底部的距离，默认30。
+
+setAxisPaddingLeft(integer padding)设置y轴和容器左边距的距离，默认40。
+
+setAxisPaddingRight(integer padding)设置图表右边和容器的距离，默认30。
+
+setAxisPaddingTop(integer padding)设置图表上边和容器的距离，默认30。
+
+setAxisValuesColor(string hexcolor)设置x/y轴值刻度值的颜色，对饼图无效。
+
+setAxisValuesDecimals(integer decimals)设置曲线图的x/y轴值，或柱状图的y轴值，对饼图无效，默认是auto。
+
+setAxisValuesFontSize(integer fontsize)设置两轴上值的字体大小，对饼图无效。
+
+setAxisValuesNumberX(integer number)设置x轴上显示的值的个数，此值会自动调整，对饼图无效。
+
+setAxisValuesNumberY(integer number)设置x轴上显示的值的个数，此值会自动调整，对饼图无效。
+
+setAxisWidth(integer width)设置轴的宽度，默认是2。
+
+setBackgroundColor(string hexcolor)设置整个图表的背景颜色，默认是#FFF。
+
+setBackgroundImage(string filename)设置图表的背景图片，图片会自动沿两轴重复。
+
+setBarBorderColor(string hexcolor)设置柱状图的条形边框颜色，只对柱状图有效，默认#C4C4C4。
+
+setBarBorderWidth(integer width)设置柱状图边框宽度，只对柱状图有效。
+
+setBarColor(string hexcolor)设置柱状图所有矩形的颜色，此函数被colorize()函数重写，只对柱状图有效。
+
+setBarOpacity(float opacity)设置柱状图的透明度，值在0～1之间，默认0.9。
+
+setBarSpacingRatio(integer ratio)设置柱状图矩形间距，由此来控制柱状图的宽度，值为0～100之间的整数，默认是10。
+
+setBarValues(boolean values)设置是否在矩形顶端显示值。
+
+setBarValuesColor(string hexcolor)设置柱状图矩形的值的颜色。
+
+setBarValuesDecimals(integer decimals)设置柱状图矩形高度的值，值为十进制数，默认auto。
+
+setBarValuesFontSize(integer fontsize)设置柱状图矩形值的字体大小，默认8.
+
+ setCanvasIdPrefix(string prefix)自定义生产元素的ID前缀，默认是JSChart，此值一般不用修改。
+
+setDataArray(array data, string id)将数据以数组的形式导入图表，id参数是可选的，并且可以设置相同的id。
+
+setDataXML(string filename)将数据以xml的形式导入到图表。
+
+setFlagColor(string hexcolor)为提示标志设置颜色。
+
+setFlagOffset(integer offset)设置提示标志的偏移量，只适用于饼图。
+
+setFlagOpacity(float opacity)设置提示标志的透明度，0～1之间，默认0.5.
+
+ setFlagRadius(integer radius)设置提示标志的半径，默认3.
+
+ setFlagWidth(integer width)设置提示标志边框宽度，默认1.
+
+ setGraphExtend(boolean extend)设置是否开启图表延伸功能，默认是false，如果打开，双轴和网格线将扩展当前长度的1/15，这样可以在样式上更加美观.
+
+setGraphLabel(string label)设置自定义图表水印标签文字。
+
+setGraphLabelColor(string hexcolor)设置自定义图表水印标签颜色。
+
+setGraphLabelFontSize(integer fontsize)设置自定义图表水印标签的字体大小，默认8.
+
+ setGraphLabelOpacity(float opacity)设置自定义图表水印标签的透明度。
+
+setGraphLabelPosition(string position)设置自定义图表水印标签的位置，取值范围在（nw, ne, sw ，se），分别定位在四个角，默认ne，即右上角。
+
+setGraphLabelShadowColor(string hexcolor)设置自定义图表水印标签的阴影颜色。
+
+setGrid(boolean grid)设置是否显示网格线。
+
+setGridColor(string hexcolor)设置网格线的颜色，默认#C6C6C6。
+
+setGridOpacity(float opacity)设置网格线透明度，取值在0～1之间，默认0.5。
+
+setIntervalEndX(integer end)设置x轴的结束值，如果设置了起始值，则此值必须比起始值大。
+
+setIntervalEndY(integer end)设置y轴的结束值，如果设置了起始值，则此值必须比起始值大。
+
+setIntervalStartX(integer start)设置x轴的起始值，如果设置了结束值，则此值必须比结束值小。
+
+setIntervalStartY(integer start)设置y轴的起始值，如果设置了结束值，则此值必须比结束值小。
+
+setLabelX(array label)在x轴上添加标签，其参数是两个值构成的一个数组，第一个参数为标签在x轴上的位置，第二个值为标签显示的内容。
+
+setLabelY(array label)在y轴上添加标签，其参数是两个值构成的一个数组，第一个参数为标签在y轴上的位置，第二个值为标签显示的内容。
+
+setLineColor(string hexcolor, string id)设置曲线图中曲线的颜色。参见曲线图示例3.
+
+ setLineOpacity(float opacity, string id)设置曲线图中曲线的透明度，取值0～1之间，默认0.9。参数id的意义同上。
+
+setLineWidth(integer width, string id)设置曲线图中曲线的宽度，默认2.
+
+ setPieOpacity(float opacity)设置饼图的透明度，取值0～1，默认1.
+
+ setPiePosition(integer x, integer y)设置饼图在容器内的位置，默认0，即位于容器的中央.
+
+setPieRadius(integer radius)设置饼图的半径。
+
+setPieUnitsColor(string hexcolor)设置饼图块名的颜色。
+
+setPieUnitsFontSize(integer fontsize)设置饼图块名的字体大小。
+
+setPieUnitsOffset(integer offset)设置饼图块名的位置，整数外移，负数内移。
+
+setPieValuesColor(string hexcolor)设置饼图值的颜色。
+
+setPieValuesDecimals(integer decimals)设置饼图上的总值。
+
+setPieValuesFontSize(integer fontsize)设置饼图上值的字体大小。
+
+setPieValuesOffset(integer offset)设置饼图上值的偏移，整数外移，负数内移，默认-20。
+
+setShowXValues(boolean show)是否显示x轴上的刻度值。
+
+setShowYValues(boolean show)是否显示y轴上的刻度值。
+
+setSize(integer x, integer y)预定义容器的大小，需用在draw()函数之前。
+
+setTextPaddingBottom(integer padding)设置x轴上标签文字与容器下边的距离，默认1.
+
+ setTextPaddingLeft(integer padding)设置y轴上标签文字与容器左边的距离，默认8.
+
+ setTextPaddingTop(integer padding)设置图表顶端与容器上边的距离，默认15.
+
+ setTitle(string title)设置图表标题，默认“JSChart”。
+
+setTitleColor(string hexcolor)设置标题颜色。
+
+setTitleFontSize(integer fontsize)设置标题字体大小。
+
+setTitlePosition(string position)设置标题位置，取值范围（center, left ， right.）。
+
+setTooltip(array tooltip)设置x轴上提示。
+
+setTooltipBackground(string hexcolor)设置提示背景。
+
+setTooltipBorder(string css)设置提示背景边框风格，参数是css表达式，默认是 1px solid #d3d3d3。
+
+setTooltipFontColor(string hexcolor)设置提示内容颜色。
+
+setTooltipFontFamily(string font)设置提示字体风格，默认arial.
+
+ setTooltipFontSize(integer fontsize)设置提示内容字体大小，默认12.
+
+ setTooltipOffset(integer offset)设置提示内容偏移，默认7。
+
+setTooltipOpacity(float opacity)设置提示透明度，默认0.7.
+
+ setTooltipPadding(string css)设置提示padding样式，默认 2px  5px。
+
+setTooltipPosition(string position)设置提示位置,取值范围 nw, ne, sw and se  默认se。
+
+setLegendShow(boolean show)设置是否显示图例
+					 	 -->
+</body>
+
+统计指定时间段向各个供应商的采购金额
+
+使用selectsupplier.jsp
+
+action:
+@Resource
+	private AccountRecordsService accountRecordsService;
+
+	@RequestMapping("/selectSupplier")
+	@ResponseBody
+	public Object selectSupplier(String start,String end){
+		System.out.println("start:"+ start+"||end:"+end);
+		Map<String, String> paramMap =new HashMap<String, String>();
+		paramMap.put("start", start);
+		paramMap.put("end", end);
+
+		return accountRecordsService.selectSupplier(paramMap);
+	}
+
+public interface AccountRecordsService extends BaseService<AccountRecords> {
+	List<Map<String, Object>> selectSupplier(Map<String,String> paramMap);
+}
+
+@Service("accountRecordsService")
+public class AccountRecordsServiceImpl extends BaseServiceImpl<AccountRecords>
+		implements AccountRecordsService {
+
+	@Override
+	public List<Map<String, Object>> selectSupplier(Map<String, String> paramMap) {
+		// TODO Auto-generated method stub
+		return accountRecordsMapper.selectSupplier(paramMap);
+	}
+
+}
+
+public interface AccountRecordsMapper extends BaseMapper<AccountRecords> {
+	
+	List<Map<String, Object>> selectSupplier(Map<String, String> paramMap);
+   
+}
+
+  <select id="selectSupplier" parameterType="map" resultType="map">
+  	<![CDATA[ 
+  	select sum(ar_payable) total,sup_name from account_records inner join supplier 
+  	on account_records.sup_id=supplier.sup_id 
+  	where ar_date >#{start} and ar_date<=#{end} and ar_bus_type='bo' 
+  	group by sup_name  	
+  	 ]]>
+  </select>
+
+select sum(ar_payable) total,sup_name from account_records inner join supplier on account_records.sup_id=supplier.sup_id where ar_date >'2014-01-01' and ar_date<='2015-08-08' and ar_bus_type='bo' group by sup_name
+
