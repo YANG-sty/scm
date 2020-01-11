@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -47,7 +48,7 @@ public class SupplierAction extends BaseAction {
     @RequestMapping(value = "/insert")
     @ResponseBody //如果返回json 格式的数据
     public Object insert(Supplier supplier) throws Exception {
-        System.out.println("----------action.supplier: "+ supplier);
+        System.out.println("----------action.supplier.insert: "+ supplier.toString());
         int i = 0;
         i = supplierService.insert(supplier);
         return i;
@@ -57,7 +58,7 @@ public class SupplierAction extends BaseAction {
     @ResponseBody //如果返回json 格式的数据
     public Object selectPageListDyc(Page<Supplier> page, Supplier supplier){
         page.setParamEntity(supplier);
-        System.out.println("----------page: "+page);
+        System.out.println("----------action.supplier.page: "+page.toString());
 
         Page p = supplierService.selectPageListDyc(page);
         return p.getPageMap();
@@ -66,7 +67,7 @@ public class SupplierAction extends BaseAction {
     @RequestMapping(value = "update")
     @ResponseBody
     public Object update(Supplier supplier) throws Exception {
-        System.out.println("-------------------------update.action:");
+        System.out.println("-------------------------action.supplier.update:"+supplier.toString());
         int i = 0;
         i = supplierService.update(supplier);
         return i;
@@ -75,7 +76,7 @@ public class SupplierAction extends BaseAction {
     @RequestMapping(value = "deleteList")
     @ResponseBody
     public Object deleteList(String[] ids) throws Exception {
-        System.out.println("------------------------------deleteList.action:");
+        System.out.println("------------------------------action.supplier.deleteList:"+ Arrays.asList(ids).toString());
         int i = 0;
         i = supplierService.delete(ids);
         return i;

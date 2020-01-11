@@ -75,7 +75,7 @@
                         //锁定整个页面，前面加 parent
                         parent.$.messager.confirm('删除对话框', '确定要删除数据！！！', function (r) {
                             if(r){
-                                alert(r);
+                                // alert(r);
                                 $.ajax({
                                     url : "${proPath}/goods/deleteList.action",
                                     type: "POST",

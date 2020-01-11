@@ -23,7 +23,7 @@
 			    idField: 'supId',
 				rownumbers:true,
 			    pagination:true,
-			    pageSize:5,
+			    pageSize:10,
 			    pageList:[3,5,10,20],
 			    
 			     queryParams: {

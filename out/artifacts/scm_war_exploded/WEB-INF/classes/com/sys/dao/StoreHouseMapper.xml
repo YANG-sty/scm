@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sys.dao.StoreHouseDao">
-  <resultMap id="BaseResultMap" type="com.sys.entity.StoreHouse">
+  <resultMap id="StoreHouseResultMap" type="com.sys.entity.StoreHouse">
     <id column="sh_id" jdbcType="VARCHAR" property="shId" />
     <result column="sh_name" jdbcType="VARCHAR" property="shName" />
     <result column="sh_responsible" jdbcType="VARCHAR" property="shResponsible" />
@@ -10,5 +10,59 @@
     <result column="sh_type" jdbcType="VARCHAR" property="shType" />
     <result column="sh_remark" jdbcType="VARCHAR" property="shRemark" />
   </resultMap>
+
+  <!-- 增加系统参数 -->
+  <insert id="insert" parameterType="com.sys.entity.StoreHouse">
+    insert into store_house (sh_id, sh_name, sh_responsible, sh_phone, sh_address,sh_type,sh_remark)
+    values (#{shId},#{shName},#{shResponsible},#{shPhone},#{shAddress},#{shType},#{shRemark})
+  </insert>
+
+  <!-- 修改系统参数信息 -->
+  <update id="update" parameterType="com.sys.entity.StoreHouse">
+    update store_house set
+                         sh_name=#{shName},sh_responsible=#{shResponsible},
+                         sh_phone=#{shPhone},sh_address=#{shAddress},
+                         sh_type=#{shType},sh_remark=#{shRemark}
+    where
+      sh_id = #{shId}
+  </update>
+
+  <!-- 通过多条件分页查询，返回数据集 -->
+  <select id="selectPageListDyc" parameterType="com.sys.entity.Page" resultMap="StoreHouseResultMap">
+    select * from store_house
+    <where>
+      <if test="paramEntity.shId!=null">and sh_id like #{paramEntity.shId}</if>
+      <if test="paramEntity.shName!=null">and sh_name like #{paramEntity.shName}</if>
+      <if test="paramEntity.shResponsible!=null">and sh_responsible like #{paramEntity.shResponsible}</if>
+
+      <if test="paramEntity.shPhone!=null">and sh_phone like #{paramEntity.shPhone}</if>
+      <if test="paramEntity.shAddress!=null">and sh_address like #{paramEntity.shAddress}</if>
+
+      <if test="paramEntity.shType!=null">and sh_type like #{paramEntity.shType}</if>
+    </where>
+    limit #{start},#{rows}
+  </select>
+  <!-- 通过多条件分页查询，返回总记录数 -->
+  <select id="selectPageCountDyc" parameterType="com.sys.entity.Page" resultType="Integer">
+    select count(1) from store_house
+    <where>
+      <if test="paramEntity.shId!=null">and sh_id like #{paramEntity.shId}</if>
+      <if test="paramEntity.shName!=null">and sh_name like #{paramEntity.shName}</if>
+      <if test="paramEntity.shResponsible!=null">and sh_responsible like #{paramEntity.shResponsible}</if>
+
+      <if test="paramEntity.shPhone!=null">and sh_phone like #{paramEntity.shPhone}</if>
+      <if test="paramEntity.shAddress!=null">and sh_address like #{paramEntity.shAddress}</if>
+
+      <if test="paramEntity.shType!=null">and sh_type like #{paramEntity.shType}</if>
+    </where>
+  </select>
+
+  <!-- 批量删除供货商信息 -->
+  <delete id="delete">
+    delete from store_house where sh_id in
+    <foreach collection="array" open="(" close=")" separator="," item="ids">
+      #{ids}
+    </foreach>
+  </delete>
   
 </mapper>

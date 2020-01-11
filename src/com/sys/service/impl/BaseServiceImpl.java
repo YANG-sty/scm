@@ -4,6 +4,7 @@ import com.sys.dao.*;
 import com.sys.entity.BuyOrderDetail;
 import com.sys.entity.Page;
 import com.sys.service.BaseService;
+import com.sys.service.StoreHouseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -35,6 +36,8 @@ public class BaseServiceImpl<T> implements BaseService<T> {
     protected BuyOrderDetailDao buyOrderDetailDao;
     @Resource
     protected SysParamDao sysParamDao;
+    @Resource
+    protected StoreHouseDao storeHouseDao;
 
     //在构造方法后，初始化之前
     @PostConstruct

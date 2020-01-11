@@ -6,7 +6,39 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12baa09b-2845-4bfb-8dac-b10b06ee5f60" name="Default Changelist" comment="" />
+    <list default="true" id="12baa09b-2845-4bfb-8dac-b10b06ee5f60" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/scm_war_exploded/WEB-INF/classes/com/sys/action/BaseAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/scm_war_exploded/WEB-INF/classes/com/sys/action/BaseAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/scm_war_exploded/WEB-INF/classes/com/sys/action/SupplierAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/scm_war_exploded/WEB-INF/classes/com/sys/action/SupplierAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/scm_war_exploded/WEB-INF/classes/com/sys/action/SysParamAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/scm_war_exploded/WEB-INF/classes/com/sys/action/SysParamAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/scm_war_exploded/WEB-INF/classes/com/sys/dao/StoreHouseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/scm_war_exploded/WEB-INF/classes/com/sys/dao/StoreHouseMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/scm_war_exploded/WEB-INF/classes/com/sys/dao/SysParamMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/scm_war_exploded/WEB-INF/classes/com/sys/dao/SysParamMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/scm_war_exploded/WEB-INF/classes/com/sys/entity/StoreHouse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/scm_war_exploded/WEB-INF/classes/com/sys/entity/StoreHouse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/scm_war_exploded/WEB-INF/classes/com/sys/service/impl/BaseServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/scm_war_exploded/WEB-INF/classes/com/sys/service/impl/BaseServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/scm_war_exploded/WEB-INF/goods/goodslist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/scm_war_exploded/WEB-INF/goods/goodslist.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/scm_war_exploded/WEB-INF/main/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/scm_war_exploded/WEB-INF/main/main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/scm_war_exploded/WEB-INF/supplier/supplierlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/scm_war_exploded/WEB-INF/supplier/supplierlist.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/scm/com/sys/action/BaseAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/scm/com/sys/action/BaseAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/scm/com/sys/action/SupplierAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/scm/com/sys/action/SupplierAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/scm/com/sys/action/SysParamAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/scm/com/sys/action/SysParamAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/scm/com/sys/dao/StoreHouseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/scm/com/sys/dao/StoreHouseMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/scm/com/sys/dao/SysParamMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/scm/com/sys/dao/SysParamMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/scm/com/sys/entity/StoreHouse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/scm/com/sys/entity/StoreHouse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/scm/com/sys/service/impl/BaseServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/scm/com/sys/service/impl/BaseServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sys/action/BaseAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sys/action/BaseAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sys/action/SupplierAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sys/action/SupplierAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sys/action/SysParamAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sys/action/SysParamAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sys/dao/StoreHouseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sys/dao/StoreHouseMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sys/dao/SysParamMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sys/dao/SysParamMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sys/entity/StoreHouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sys/entity/StoreHouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sys/service/impl/BaseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sys/service/impl/BaseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/goods/goodslist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/goods/goodslist.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/goods/select.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/goods/select.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/main/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/main/main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/supplier/select.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/supplier/select.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/supplier/supplierlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/supplier/supplierlist.jsp" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +93,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GroovyConsoleState">
     <option name="list">
       <list>
@@ -89,13 +124,15 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1TrrdR2Eq0U1yqKK4warEBkrvll" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/goods" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/storehouse" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -103,24 +140,24 @@
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/com/sys/dao/StoreHouseMapper.java" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Idea_Workspace\scm\web\WEB-INF\goods" />
-      <recent name="E:\Idea_Workspace\scm\web\WEB-INF" />
-      <recent name="E:\Idea_Workspace\scm\web" />
-      <recent name="E:\Idea_Workspace\scm\src\com\sys\dao" />
-      <recent name="E:\Idea_Workspace\scm\src\com\sys\filter" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.sys.action" />
-      <recent name="com.sys.service.impl" />
-      <recent name="com.sys.service" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Idea_Workspace\scm\web\WEB-INF\supplier" />
       <recent name="E:\Idea_Workspace\scm\src\com\sys\entity" />
       <recent name="E:\Idea_Workspace\scm\web" />
       <recent name="E:\Idea_Workspace\scm\src" />
       <recent name="E:\Idea_Workspace\scm\src\com\sys" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.sys.service.impl" />
+      <recent name="com.sys.service" />
+      <recent name="com.sys.action" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Idea_Workspace\scm\web\WEB-INF\storehouse" />
+      <recent name="E:\Idea_Workspace\scm\web\WEB-INF\sysparam" />
+      <recent name="E:\Idea_Workspace\scm\web\WEB-INF\goods" />
+      <recent name="E:\Idea_Workspace\scm\web\WEB-INF" />
+      <recent name="E:\Idea_Workspace\scm\web" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -411,21 +448,30 @@
       <workItem from="1574646234113" duration="65952000" />
       <workItem from="1578364925608" duration="37000" />
       <workItem from="1578365481868" duration="26755000" />
-      <workItem from="1578534181535" duration="27540000" />
+      <workItem from="1578534181535" duration="42607000" />
+      <workItem from="1578653450119" duration="14976000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/sys/action/SupplierAction.java</url>
-          <line>77</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/sys/action/BuyOrderAction.java</url>
           <line>28</line>

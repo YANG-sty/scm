@@ -59,9 +59,16 @@
 					<li style="padding: 6px;"><a href="${proPath}/base/goURL/supplier/supplierlist.action" title="供应商管理"
 						style="text-decoration: none;display: block;font-weight:bold;">供应商管理</a>
 					</li>
+					<li style="padding: 6px;"><a href="${proPath}/base/goURL/storehouse/storehouselist.action" title="仓库管理"
+												 style="text-decoration: none;display: block;font-weight:bold;">仓库管理</a>
+					</li>
 					<li style="padding: 6px;"><a href="${proPath}/base/goURL/goods/goodslist.action" title="商品管理"
 						style="text-decoration: none;display: block;font-weight:bold;">商品管理</a>
 					</li>
+					<li style="padding: 6px;"><a href="${proPath}/base/goURL/sysparam/sysparamlist.action" title="参数管理"
+												 style="text-decoration: none;display: block;font-weight:bold;">参数管理</a>
+					</li>
+
 				</ul>
 			</div>
 

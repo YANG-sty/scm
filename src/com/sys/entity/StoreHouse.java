@@ -23,6 +23,9 @@ public class StoreHouse implements Serializable {
 
     private String shRemark;
 
+    public StoreHouse() {
+    }
+
     public StoreHouse(String shId, String shName, String shResponsible, String shPhone, String shAddress, String shType, String shRemark) {
         this.shId = shId;
         this.shName = shName;

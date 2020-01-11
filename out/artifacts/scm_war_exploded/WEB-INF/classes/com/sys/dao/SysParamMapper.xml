@@ -8,6 +8,46 @@
         <result column="sys_param_text" property="sysParamText" jdbcType="VARCHAR" />
         <result column="sys_param_type" property="sysParamType" jdbcType="VARCHAR" />
     </resultMap>
+    <!-- 增加系统参数 -->
+    <insert id="insert" parameterType="com.sys.entity.SysParam">
+        insert into sys_param (sys_param_id, sys_param_field, sys_param_value, sys_param_text, sys_param_type)
+        values (#{sysParamId},#{sysParamField},#{sysParamValue},#{sysParamText},#{sysParamType})
+    </insert>
+
+    <!-- 修改系统参数信息 -->
+    <update id="update" parameterType="com.sys.entity.SysParam">
+        update sys_param set
+                             sys_param_field=#{sysParamField},sys_param_value=#{sysParamValue},
+                             sys_param_text=#{sysParamText},sys_param_type=#{sysParamType}
+        where
+            sys_param_id = #{sysParamId}
+    </update>
+
+    <!-- 通过多条件分页查询，返回数据集 -->
+    <select id="selectPageListDyc" parameterType="com.sys.entity.Page" resultMap="SysParamResultMap">
+        select * from sys_param
+        <where>
+            <if test="paramEntity.sysParamField!=null">and sys_param_field like #{paramEntity.sysParamField}</if>
+        </where>
+        limit #{start},#{rows}
+    </select>
+    <!-- 通过多条件分页查询，返回总记录数 -->
+    <select id="selectPageCountDyc" parameterType="com.sys.entity.Page" resultType="Integer">
+        select count(1) from sys_param
+        <where>
+            <if test="paramEntity.sysParamField!=null">and sys_param_field like #{paramEntity.sysParamField}</if>
+        </where>
+    </select>
+
+    <!-- 批量删除供货商信息 -->
+    <delete id="delete">
+        delete from sys_param where sys_param_id in
+        <foreach collection="array" open="(" close=")" separator="," item="ids">
+            #{ids}
+        </foreach>
+    </delete>
+
+
     <!-- 获取整个表的数据，用来启动时加载系统参数 -->
     <select id="selectList" parameterType="string" resultMap="SysParamResultMap">
         select * from sys_param

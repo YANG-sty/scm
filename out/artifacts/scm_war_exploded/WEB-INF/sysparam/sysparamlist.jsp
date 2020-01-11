@@ -11,10 +11,10 @@
 	$(function(){
 
         $('#dg').datagrid({
-            url: '${proPath}/goods/selectPageListDyc.action',
+            url: '${proPath}/sysParam/selectPageListDyc.action',
             fitColumns:true,
             nowrapL:true,
-            idField: 'goodsId',
+            idField: 'sysParamId',
             rownumbers:true,
             pagination:true,
             pageSize:10,
@@ -31,11 +31,11 @@
                 handler: function(){
                     // alert('新增按钮');
                     parent.$('#win').window({
-                        title :'添加商品',
+                        title :'添加系统参数',
                         width:600,
                         height:400,
                         modal:true,
-                        content:"<iframe src='${proPath}/base/goURL/goods/insert.action' height='100%' width='100%' frameborder='0px' ></iframe>"
+                        content:"<iframe src='${proPath}/base/goURL/sysparam/insert.action' height='100%' width='100%' frameborder='0px' ></iframe>"
                     });
                 }
             },'-',{
@@ -50,11 +50,11 @@
                         return false;
                     }
                     parent.$('#win').window({
-                        title : '修改商品',
+                        title : '修改系统参数',
                         width : 600,
                         height: 400,
                         modal: true,
-                        content:"<iframe src='${proPath}/base/goURL/goods/update.action' height='100%' width='100%' frameborder='0px' ></iframe>"
+                        content:"<iframe src='${proPath}/base/goURL/sysparam/update.action' height='100%' width='100%' frameborder='0px' ></iframe>"
                     });
                 }
             },'-',{
@@ -68,7 +68,7 @@
                         //定义数组，通过下边的用来存储选中记录的ID
                         var ids = new Array();
                         for(i=0; i<array.length; i++){
-                            ids[i] = array[i].goodsId;
+                            ids[i] = array[i].sysParamId;
                             // alert(ids[i]);
                         }
                         // alert("ids: "+ids);
@@ -77,7 +77,7 @@
                             if(r){
                                 // alert(r);
                                 $.ajax({
-                                    url : "${proPath}/goods/deleteList.action",
+                                    url : "${proPath}/sysParam/deleteList.action",
                                     type: "POST",
                                     //设置为传统的方式传递参数
                                     traditional: true,
@@ -103,53 +103,21 @@
                     }
                 }
             },'-',{
-                text:"商品编号： <input type='text' id='goodsId' name='goodsId'/>",
-            },'-',{
-                text:"商品名称： <input type='text' id='goodsName' name='goodsName'/>",
-            },'-',{
-                text:"商品类型： <input type='text' id='goodsType' name='goodsType'/>",
+                text:"系统参数名称： <input type='text' id='sysParamField' name='sysParamField'/>",
             }],
             columns: [[
                 {checkbox:true},
-                {field: 'goodsId', title: '商品编号', width: 100},
-                {field: 'goodsName', title: '商品名称', width: 100},
-                {field: 'goodsUnit', title: '商品单位', width: 100},
-                {field: 'goodsType', title: '商品类型', width: 100},
-                {field: 'goodsColor', title: '商品颜色', width: 100,
-                    formatter: function (value, row, index) {
-                        // alert(value);
-                        <c:forEach items="${applicationScope.sysParam.goodsColor}" var="goodsColor">
-                        if ("${goodsColor.key}" == value) {
-                            <%--alert(value);--%>
-                            <%--alert("${goodsColor.key}");--%>
-                            return "${goodsColor.value}";
-                        }
-                        </c:forEach>
-                    }
-                },
-                {field: 'goodsStore', title: '商品仓库', width: 100,
-                    formatter: function (value, row, index) {
-                        <c:forEach items="${applicationScope.sysParam.shId}" var="shId">
-                        if ("${shId.key}" == value) {
-                            return "${shId.value}";
-                        }
-                        </c:forEach>
-                    }
-                },
-                {field: 'goodsLimit', title: '商品下限', width: 100},
-                {field: 'goodsCommission', title: '提成', width: 100},
-                {field: 'goodsProducer', title: '生产厂家', width: 100},
-                {field: 'goodsRemark', title: '备注', width: 100},
-                {field: 'goodsSelPrice', title: '售价', width: 100},
-                {field: 'goodsBuyPrice', title: '进价', width: 100, align: 'right'}
+                {field: 'sysParamId', title: '参数编号', width: 100},
+                {field: 'sysParamField', title: '参数名称', width: 100},
+                {field: 'sysParamValue', title: '参数值', width: 100},
+                {field: 'sysParamText', title: '参数内容', width: 100},
+                {field: 'sysParamType', title: '参数类型', width: 100, align: 'right'}
             ]]
         });
-        $('#goodsType').searchbox({
+        $('#sysParamField').searchbox({
             searcher:function(value,name){
                 $('#dg').datagrid('load',{
-                    goodsId: '%'+$('#goodsId').val()+'%',
-                    goodsName: '%'+$('#goodsName').val()+'%',
-                    goodsType:'%'+value+'%'
+                    sysParamField:'%'+value+'%'
                 });
             },
             prompt:''
